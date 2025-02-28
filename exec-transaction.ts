@@ -91,7 +91,7 @@ const execTransactionAbi = {
 
 program.parse(process.argv);
 const options = program.opts<CommandOptions>();
-console.log(options);
+// console.log(options);
 // Default values for other parameters
 const DEFAULT_SAFE_TX_GAS = 0n; // 0 for estimation
 const DEFAULT_BASE_GAS = 0n;
@@ -100,18 +100,18 @@ const DEFAULT_GAS_TOKEN = "0x0000000000000000000000000000000000000000";
 const DEFAULT_REFUND_RECEIVER = "0x0000000000000000000000000000000000000000";
 
 try {
-  console.log([
-    options.to, // to address
-    BigInt(options.value), // value
-    options.data as `0x${string}`, // data
-    Number(options.operation), // operation
-    DEFAULT_SAFE_TX_GAS, // safeTxGas
-    DEFAULT_BASE_GAS, // baseGas
-    DEFAULT_GAS_PRICE, // gasPrice
-    DEFAULT_GAS_TOKEN, // gasToken
-    DEFAULT_REFUND_RECEIVER, // refundReceiver
-    options.signatures as `0x${string}`, // signatures
-  ]);
+  // console.log([
+  //   options.to, // to address
+  //   BigInt(options.value), // value
+  //   options.data as `0x${string}`, // data
+  //   Number(options.operation), // operation
+  //   DEFAULT_SAFE_TX_GAS, // safeTxGas
+  //   DEFAULT_BASE_GAS, // baseGas
+  //   DEFAULT_GAS_PRICE, // gasPrice
+  //   DEFAULT_GAS_TOKEN, // gasToken
+  //   DEFAULT_REFUND_RECEIVER, // refundReceiver
+  //   options.signatures as `0x${string}`, // signatures
+  // ]);
   const encodedData = encodeFunctionData({
     abi: [execTransactionAbi],
     functionName: "execTransaction",
